@@ -1,0 +1,226 @@
+/* ======== ESTILOS GENERALES ======== */
+body {
+  font-family: "Rationale", sans-serif;
+  font-size: 25px;
+  background-color: #FFFFFF;
+  color: #0a0a0a;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======== NAVBAR ======== */
+.navbar {
+  background-color: #0a0a0a !important;
+}
+.navbar-brand, .nav-link {
+  color: #39ff14 !important;
+  transition: color 0.3s ease;
+}
+.navbar-brand:hover, .nav-link:hover {
+  color: #8a2be2 !important;
+}
+
+.navbar a {
+  font-family: 'Manufacturing Consent', sans-serif;
+  font-size: 20px;
+}
+
+/* ======== HERO ======== */
+.hero {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #39ff14, #0a0a0a, #b0b0b0, #8a2be2, #FFFFFF);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+/* Animación del fondo */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Texto dentro del Hero */
+.hero .container {
+  position: relative;
+  z-index: 2;
+  animation: textColor 12s ease infinite;
+}
+
+/* Animación de color en el texto */
+@keyframes textColor {
+  0% { color: #FFFFFF; }
+  25% { color: #8A2BE2; }
+  50% { color: #B0B0B0; }
+  75% { color: #0A0A0A; }
+  100% { color: #39FF14; }
+}
+
+/* Estilo del h1 con la fuente */
+.hero h1 {
+  font-family: 'Manufacturing Consent', sans-serif;
+  text-shadow: 2px 2px 5px #0a0a0a;
+}
+
+/* Contorno al párrafo para legibilidad */
+.hero p {
+  font-family: "Courgette", cursive;
+  text-shadow: 2px 2px 5px #0a0a0a;
+}
+
+/* ======== TITULARES ======== */
+h2, h3 {
+  font-family: 'Manufacturing Consent', sans-serif;
+  color: #0a0a0a;
+}
+
+/* ======== ANIMACIONES ======== */
+.animate-fade {
+  animation: fadeIn 2s ease-in-out;
+}
+.animate-slide {
+  animation: slideUp 2s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ======== CARRUSELES ======== */
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.carousel-caption {
+  background: #39ff14;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+.carousel-caption h5 {
+  font-family: "Rock Salt", cursive;
+  color: #0a0a0a;
+  font-weight: bold;
+  font-size: large;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* ===== Redes Sociales flotantes ===== */
+.social-menu {
+  position: fixed;
+  top: 40%;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.social-menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.social-menu a img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.social-menu a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px #0a0a0a;
+}
+
+a {
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #39ff14;
+  text-decoration: none;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  font-size: 20px;
+  background-color: #0a0a0a;
+  color: #39ff14;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ======== LETRERO MARQUEE ======== */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: #0a0a0a; /* Fondo oscuro */
+  color: #39ff14;      /* Texto claro */
+  padding: 10px 0;
+  position: relative;
+  box-sizing: border-box;
+  font-family: "Rock Salt", cursive;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;      /* Ajusta el ancho al contenido */
+  animation: marquee 30s linear infinite;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-right: 100px;   /* Espacio entre repeticiones */
+}
+
+/* Animación continua */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==== CURSOR PERSONALIZADO 👽 ==== */
+body, html {
+  cursor: none; /* ocultamos el cursor original */
+}
+
+#cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;       /* por encima de todo */
+  font-size: 32px;      /* tamaño del emoji */
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* no bloquea clics */
+  user-select: none;
+  transition: transform 0.05s linear;
+}
